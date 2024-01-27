@@ -1,5 +1,4 @@
 const fs = require("fs"); // fs : file system
-const { get } = require("http");
 
 /*
 //------------------------------creating file in node js--------------------------------------
@@ -54,3 +53,9 @@ fs.cpSync("./test.txt", "./copy.txt");
 fs.unlinkSync("./copy.txt");
 
 */
+
+// default Thread Pool size = 4
+// Max ? -8 core cpu - 8
+
+const os = require("os");
+console.log(os.cpus().length); // 12 core cpu
