@@ -15,9 +15,10 @@ fs.writeFile("./test1.txt", "Hello world", (err) => {});
 /*
 //---------------------------Reading files in node js----------------------------------------------
 
+console.log("1");
 //sync...
-const result = fs.readFileSync("./contact.txt", "utf-8");
-console.log(result);
+// const result = fs.readFileSync("./contact.txt", "utf-8");
+// console.log(result);
 
 //async...
 fs.readFile("./contact.txt", "utf-8", (err, result) => {
@@ -26,7 +27,8 @@ fs.readFile("./contact.txt", "utf-8", (err, result) => {
   } else {
     console.log(result);
   }
-}); 
+});
+console.log("2");
 
 */
 
