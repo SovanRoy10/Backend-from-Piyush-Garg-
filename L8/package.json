@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "url": "^0.11.3"
+  },
+  "name": "l8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
