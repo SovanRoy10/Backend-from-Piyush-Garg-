@@ -7,7 +7,7 @@ const myServer = http.createServer((req, res) => {
   //   console.log(req.headers);
   //console.log(res);
 
-  const log = `${Date.now()} : New Req Received\n`;
+  const log = `${Date.now()} : ${req.url}\n`;
   fs.appendFile("log.txt", log, (err, data) => {
     switch (req.url) {
       case "/":
