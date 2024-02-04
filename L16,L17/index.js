@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 app.get("/user", (req, res) => {
   // res.setHeader("myName", "Sovan Roy"); // custom headers
   res.setHeader("X-MyName", "Sovan Roy"); // custom headers // good practice
-  res.send("Hello World!");
+  res.status(201).send("Hello World!"); 
 });
 
 app.listen(port, () => {
