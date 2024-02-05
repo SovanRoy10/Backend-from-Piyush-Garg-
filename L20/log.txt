@@ -1,0 +1,26 @@
+
+1707106585548: ::1 GET: /api/user
+
+1707106628653: ::1 GET: /api/users
+
+1707106670037: ::1 GET: /api/users
+
+1707106770600: ::1 GET: /api/user
+
+1707106776328: ::1 GET: /users
+
+1707106799398: ::1 GET: /api/users/1
+
+1707106823645: ::1 GET: /api/users/65bfaa635fe5611f3a0f1e42
+
+1707106858289: ::1 GET: /api/users
+
+1707106960629: ::1 GET: /api/users/65bfaa635fe5611f3a0f1e42
+
+1707106965711: ::1 GET: /api/users
+
+1707106973672: ::1 GET: /api/users
+
+1707107027164: ::1 POST: /api/users
+
+1707107033953: ::1 GET: /api/users
