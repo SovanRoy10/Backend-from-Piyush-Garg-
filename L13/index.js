@@ -33,6 +33,7 @@ app.post("/api/users", (req, res) => {
   // TODO : create new user
   const body = req.body;
   console.log(body);
+  console.log(users.length)
   users.push({ ...body, id: users.length + 1 });
   fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
     return res.json({ status: "success", id: users.length });
