@@ -1,9 +1,8 @@
 const express = require("express");
-const users = require("./MOCK_DATA.json");
+// const users = require("./MOCK_DATA.json");
 const fs = require("fs");
 
 const mongoose = require("mongoose");
-const { Certificate } = require("crypto");
 mongoose
   .connect("mongodb://127.0.0.1:27017/piyushdeb_test")
   .then(() => console.log("MongoDB connected"))
@@ -81,6 +80,7 @@ app.post("/api/users", async (req, res) => {
     !body.gender ||
     !body.job_title
   ) {
+    // console.log(body);
     return res.status(400).json({ msg: "All fields are req..." });
   }
 
@@ -107,14 +107,13 @@ app.patch("/api/users/:id", async (req, res) => {
   res.json({ status: "success" });
 });
 
-app.delete("/api/users/:id", async(req, res) => {
+app.delete("/api/users/:id", async (req, res) => {
   // TODO : delete the user with id
-  
+
   await User.findByIdAndDelete(req.params.id);
 
   res.json({ status: "success" });
 });
-
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
