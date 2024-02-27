@@ -24,3 +24,5 @@
 1707107027164: ::1 POST: /api/users
 
 1707107033953: ::1 GET: /api/users
+
+1708916615999: ::ffff:127.0.0.1 GET: /api/users/
