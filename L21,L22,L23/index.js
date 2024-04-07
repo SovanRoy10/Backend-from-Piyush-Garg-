@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const path = require("path");
 
 const cookieParser = require("cookie-parser");
 
@@ -17,13 +18,14 @@ connectDB("mongodb://127.0.0.1:27017/urlShortner_test").then(() => {
 });
 
 app.set("view engine", "ejs");
+app.set("views", path.resolve("./views"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/url", restrictToLoggedInUserOnly, URLroute);
-app.use("/",checkAuth, staticRouter);
+app.use("/", checkAuth, staticRouter);
 app.use("/user", userRouter);
 
 app.listen(port, () => {

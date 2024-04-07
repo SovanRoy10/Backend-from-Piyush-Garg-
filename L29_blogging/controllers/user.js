@@ -21,9 +21,19 @@ async function handlePostSignUp(req, res) {
 
 async function handlePostLogin(req, res) {
   const { email, password } = req.body;
-  const user = await User.matchPassword(email, password);
-  console.log("User", user);
-  return res.redirect("/");
+  try {
+    const token = await User.matchPasswordAndGenerateToken(email, password);
+    //   console.log("Token", token);
+    return res.cookie("token", token).redirect("/");
+  } catch (error) {
+    return res.render("login", {
+      error: "Incorrect Email or password",
+    });
+  }
+}
+
+async function handleLogOut(req, res) {
+  return res.clearCookie("token").redirect("/");
 }
 
 module.exports = {
@@ -31,4 +41,5 @@ module.exports = {
   handleGetSignUp,
   handlePostSignUp,
   handlePostLogin,
+  handleLogOut,
 };
