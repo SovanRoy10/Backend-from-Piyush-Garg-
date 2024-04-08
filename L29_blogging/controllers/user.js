@@ -24,7 +24,7 @@ async function handlePostLogin(req, res) {
   try {
     const token = await User.matchPasswordAndGenerateToken(email, password);
     //   console.log("Token", token);
-    return res.cookie("token", token).redirect("/");
+    return res.cookie(process.env.COOKIE_NAME, token).redirect("/");
   } catch (error) {
     return res.render("login", {
       error: "Incorrect Email or password",
@@ -33,7 +33,7 @@ async function handlePostLogin(req, res) {
 }
 
 async function handleLogOut(req, res) {
-  return res.clearCookie("token").redirect("/");
+  return res.clearCookie(process.env.COOKIE_NAME).redirect("/");
 }
 
 module.exports = {

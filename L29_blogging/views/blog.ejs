@@ -9,7 +9,7 @@
 
     <div class="container mt-4">
       <h1><%= blog.title %></h1>
-      <img src="<%= blog.coverImageUrl %>" alt="..." width="800px" />
+      <img src="<%= blog.coverImageUrl %>" alt="..." width="700px" />
       <p class="mt-3"><%= blog.body %></p>
     </div>
 
@@ -29,6 +29,7 @@
             id="content"
             name="content"
             placeholder="Add your comment"
+            required
           />
         </div>
         <% if (locals.user) { %>
