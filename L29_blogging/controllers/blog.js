@@ -8,10 +8,10 @@ async function handleGetAddBlog(req, res) {
 }
 
 async function handlePostAddBlog(req, res) {
-  //   console.log(req.body);
-  //   console.log(req.file);
+  // console.log(req.body);
+  // console.log(req.file);
   const blog = await Blog.create({
-    coverImageUrl: `/uploads/${req.file.filename}`,
+    // coverImageUrl: `/uploads/${req.file.filename}`,
     title: req.body.title,
     body: req.body.body,
     createdBy: req.user._id,
